@@ -1,0 +1,129 @@
+{% load static %}
+{% include 'components/navbar.html'%} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organ Donation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static './styles/about.css'%}">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center text-center text-white">
+    <div class="container">
+      <h1>One Donor Can Help Transform Upto 8 Lives</h1>
+      <a href="{% static 'img/main/ab1.webp' %}" alt class="btn btn-success mt-3">Pledge Now</a>
+    </div>
+  </section>
+
+  <!-- Mission / Vision -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3">
+          <h4>Mission</h4>
+          <p>To increase the number of donor pledges...</p>
+        </div>
+        <div class="col-md-3">
+          <h4>Vision</h4>
+          <p>Increase transplant opportunities...</p>
+        </div>
+        <div class="col-md-3">
+          <h4>Team</h4>
+          <p>Doctors, volunteers and supporters...</p>
+        </div>
+        <div class="col-md-3">
+          <h4>Trustees</h4>
+          <p>Committed individuals ensuring transparency...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="{% static 'img/main/ab11.jpg' %}" class="img-fluid rounded" alt="Who we are">
+        </div>
+        <div class="col-md-6">
+          <h2>Who We Are</h2>
+          <p>Founded in 2013, we strive to provide support systems...</p>
+          <a href="" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h2>What We Do</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <img src="{% static 'img/main/ab22.webp' %}" class="img-fluid rounded mb-3">
+          <h5>Awareness & Outreach</h5>
+          <p>Campaigns to spread organ donation awareness.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'img/main/ab23.webp' %}" class="img-fluid rounded mb-3">
+          <h5>Helping People</h5>
+          <p>Supporting families and donors in every step.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'img/main/ab24.webp' %}" class="img-fluid rounded mb-3">
+          <h5>Research</h5>
+          <p>Promoting medical innovations and policies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pledge Banner -->
+  <section class="pledge text-center text-white d-flex align-items-center">
+    <div class="container">
+      <h2>Take The Pledge & Give The Gift of Life</h2>
+      <a href="{% static 'img/main/ab34.jpg' %}" class="btn btn-light mt-3">Pledge Now</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>Contact Us</h2>
+          <form>
+            <input type="text" class="form-control mb-3" placeholder="Name">
+            <input type="email" class="form-control mb-3" placeholder="Email">
+            <input type="text" class="form-control mb-3" placeholder="Subject">
+            <textarea class="form-control mb-3" rows="4" placeholder="Message"></textarea>
+            <button class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="{% static 'img/main/final.webp' %}" class="img-fluid rounded" alt="Mail">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map + Info -->
+  <section class="py-5 bg-light">
+    <div class="container text-center">
+      <h5>Toll Free Helpline 1-800-120-3648</h5>
+      <img src="map.png" class="img-fluid my-3" alt="Map">
+      <p><strong>Address:</strong> Hyderabad, Telangana 500001</p>
+      <p><strong>Email:</strong> info@organdonation.org</p>
+    </div>
+  </section>
+
+ 
+
+</body>
+</html>

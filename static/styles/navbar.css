@@ -1,0 +1,118 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+/* Top Navbar */
+.top-navbar {
+  background: black;
+  border-bottom: 1px solid #ddd;
+  color:white;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.top-navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.top-navbar a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.2s;
+}
+
+.top-navbar a:hover {
+  color: #007bff;
+}
+#admin{
+  color:red;
+  border: 2px solid black;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  background: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  
+}
+.top-navbar .donate-btn {
+  background: #28a745;
+  color: #fff !important;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.top-navbar .donate-btn:hover {
+  background: #218838;
+}
+
+/* Secondary Navbar */
+.secondary-navbar {
+  background: #007bff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 12px 0;
+}
+
+.secondary-navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.secondary-navbar .logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.secondary-navbar .logo img {
+  height: 35px;
+  margin-right: 10px;
+}
+
+.secondary-navbar .menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.secondary-navbar .menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.secondary-navbar .menu li a:hover {
+  color: #ffeb3b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .secondary-navbar .menu {
+    display: none; /* You can later add toggle JS for mobile menu */
+  }
+}

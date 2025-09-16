@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organ Donation Platform</title>
+  <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="top-navbar">
+    <div class="container">
+      <div class="left">
+        <a href="#">+91 9432688567</a>
+      </div>
+      <div class="right">
+        <a href="{% url 'Donar_register_details' %}" class="donate-btn">Donate</a>
+        <a href="#" id="admin">Admin</a>
+       <label for="lang">Language:</label>
+        <select name="lang" id="lang">
+            <option value="en">English</option>
+            <option value="ta">Tamil</option>
+        </select>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="secondary-navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="{% static 'img/main/logo.png' %}" alt="Logo">
+        <span>Organ Donation Platform</span>
+      </div>
+      <ul class="menu">
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li><a href="{% url 'Donar_login_info'%}">Organ Donation</a></li>
+        <li><a href="{% url 'pledge'%}">Pledge</a></li>
+        <li><a href="#">Patient</a></li>
+        <li><a href="#">Latest News</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+</html>

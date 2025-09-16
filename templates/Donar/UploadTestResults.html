@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Donor Test Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+      min-height: 100vh;
+    }
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+    .card-header {
+      background: linear-gradient(135deg, #42a5f5, #66bb6a);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 15px 15px 0 0;
+    }
+    .btn-submit {
+      background: linear-gradient(135deg, #42a5f5, #1e88e5);
+      color: white;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 10px 25px;
+      transition: all 0.3s ease;
+    }
+    .btn-submit:hover {
+      background: linear-gradient(135deg, #1e88e5, #1565c0);
+      transform: scale(1.05);
+    }
+    label {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+{% include "components/DonorNav.html" %}
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3><i class="fas fa-vials"></i> Upload Donor Test Results</h3>
+    </div>
+    <div class="card-body">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Eye Section -->
+        <h5 class="mt-3 text-primary">👁️ Eye Tests</h5>
+        <div class="row">
+          <div class="col-md-4"><label>Visual Acuity</label><input type="text" name="visual_acuity" class="form-control"></div>
+          <div class="col-md-4"><label>Corneal Thickness (μm)</label><input type="number" step="0.1" name="corneal_thickness" class="form-control"></div>
+          <div class="col-md-4"><label>IOP (mmHg)</label><input type="number" step="0.1" name="iop" class="form-control"></div>
+        </div>
+
+        <!-- Kidney -->
+        <h5 class="mt-4 text-success">🩺 Kidney Tests</h5>
+        <div class="row">
+          <div class="col-md-4"><label>Creatinine</label><input type="number" step="0.1" name="creatinine" class="form-control"></div>
+          <div class="col-md-4"><label>BUN</label><input type="number" step="0.1" name="bun" class="form-control"></div>
+          <div class="col-md-4"><label>GFR</label><input type="number" step="0.1" name="gfr" class="form-control"></div>
+        </div>
+
+        <!-- Liver -->
+        <h5 class="mt-4 text-danger">🧬 Liver Tests</h5>
+        <div class="row">
+          <div class="col-md-3"><label>ALT (SGPT)</label><input type="number" step="0.1" name="alt" class="form-control"></div>
+          <div class="col-md-3"><label>AST (SGOT)</label><input type="number" step="0.1" name="ast" class="form-control"></div>
+          <div class="col-md-3"><label>Bilirubin</label><input type="number" step="0.1" name="bilirubin" class="form-control"></div>
+          <div class="col-md-3"><label>Albumin</label><input type="number" step="0.1" name="albumin" class="form-control"></div>
+        </div>
+
+        <!-- Tissue -->
+        <h5 class="mt-4 text-warning">🧪 Tissue / Blood Tests</h5>
+        <div class="row">
+          <div class="col-md-3"><label>Blood Group</label><input type="text" name="blood_group" class="form-control"></div>
+          <div class="col-md-3"><label>HLA Typing</label><input type="text" name="hla_typing" class="form-control"></div>
+          <div class="col-md-2"><label>Hb</label><input type="number" step="0.1" name="hemoglobin" class="form-control"></div>
+          <div class="col-md-2"><label>WBC</label><input type="number" name="wbc" class="form-control"></div>
+          <div class="col-md-2"><label>Platelets</label><input type="number" name="platelets" class="form-control"></div>
+        </div>
+
+        <!-- Screening -->
+        <h5 class="mt-4 text-info">🧑‍⚕️ Infection Screening</h5>
+        <div class="row">
+          <div class="col-md-2"><label>BP</label><input type="text" name="bp" class="form-control"></div>
+          <div class="col-md-2"><label>ECG</label><input type="text" name="ecg" class="form-control"></div>
+          <div class="col-md-2"><label>Glucose</label><input type="number" step="0.1" name="glucose" class="form-control"></div>
+          <div class="col-md-2"><label>HIV</label><input type="text" name="hiv" class="form-control"></div>
+          <div class="col-md-2"><label>HBV</label><input type="text" name="hbv" class="form-control"></div>
+          <div class="col-md-2"><label>HCV</label><input type="text" name="hcv" class="form-control"></div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-2"><label>VDRL</label><input type="text" name="vdrl" class="form-control"></div>
+          <div class="col-md-4"><label>Upload Reports</label><input type="file" name="reports" class="form-control-file"></div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-submit"><i class="fas fa-save"></i> Save Results</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% include 'components/footer.html' %}
+</body>
+</html>
